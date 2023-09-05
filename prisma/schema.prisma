@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Usercreation {
+  id        Int         @id @default(autoincrement())
+  createdAt DateTime    @default(now())
+  Username  String?     @unique
+  Password  String?
+  newPassword String?
+  Role      Assignrole? @default(User)
+}
+
+enum Assignrole {
+  User
+  Admin
+}
