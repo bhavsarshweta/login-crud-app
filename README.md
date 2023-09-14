@@ -1,6 +1,3 @@
-# Inaiways Technology Pvt Ltd Platform
-
-
 
 ## Setup
 
